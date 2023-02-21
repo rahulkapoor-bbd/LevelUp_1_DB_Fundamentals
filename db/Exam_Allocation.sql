@@ -1,7 +1,10 @@
-use ExamAllocation;
-go
-create database ExamAllocation;
-go
+USE Master;
+GO
+CREATE DATABASE ExamAllocation;
+GO
+
+USE ExamAllocation;
+GO
 
 CREATE TABLE DegreeCourse(
 	degree_code varchar(10) NOT NULL PRIMARY KEY,
@@ -35,4 +38,3 @@ GO
 ALTER TABLE Module
 ADD CONSTRAINT check_semester_type
 	CHECK (semester_type = 'f' OR semester_type = 's' OR semester_type = 'y')
-GO
