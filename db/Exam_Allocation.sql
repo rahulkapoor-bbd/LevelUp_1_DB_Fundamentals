@@ -1,7 +1,10 @@
-use Master;
-go
-create database ExamAllocation;
-go
+USE Master;
+GO
+CREATE DATABASE ExamAllocation;
+GO
+
+USE ExamAllocation;
+GO
 
 /*creating the users table*/
 Create Table Users(
