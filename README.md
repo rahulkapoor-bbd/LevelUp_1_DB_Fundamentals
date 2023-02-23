@@ -66,7 +66,7 @@ __Users__
   4. user_surname: varchar(100) - surname of the user.
   5. user_email: varchar(320) - email of a particular user.
   
-  __Degree_Student_Bridge__
+__Degree_Student_Bridge__
 - Bridging table to resolve many to many relationship between the student and the degree course. Stores student's user name along with the degree code for which the     student is registered for.
 - The table contains the following attributes:
   1. degree_student_bridge_id: int - primary key for the bridging table.
