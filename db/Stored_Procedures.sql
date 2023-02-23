@@ -1,29 +1,39 @@
 USE ExamAllocation;
+
 GO
+    /*Stored procedures*/
+    CREATE PROCEDURE selectAllUsers AS
+SELECT
+    *
+FROM
+    Users
+GO
+;
 
-/*Stored procedures*/
-Create procedure selectAllUsers
-as 
-select * from Users
-go;
-
-Exec selectAllUsers;
+EXEC selectAllUsers;
 
 /*Selecting all students*/
-Create Procedure selectAllStudents
-as
-Select user_firstname from Users where Users.user_type = 'S' 
-go
-
-Exec selectAllStudents;
+CREATE PROCEDURE selectAllStudents AS
+SELECT
+    user_firstname
+FROM
+    Users
+WHERE
+    Users.user_type = 'S'
+GO
+    EXEC selectAllStudents;
 
 /*Displaying students with their degree counts*/
-Create Procedure displayStudentDegreeCount
-as
-Select Users.user_name, count(*) as degree_count from Degree_Student_Bridge, Users
-where Users.user_name = Degree_Student_Bridge.user_name
-group by(Users.user_name)
-go
-
-Exec displayStudentDegreeCount;
-
+CREATE PROCEDURE displayStudentDegreeCount AS
+SELECT
+    Users.user_name,
+    count(*) AS degree_count
+FROM
+    Degree_Student_Bridge,
+    Users
+WHERE
+    Users.user_name = Degree_Student_Bridge.user_name
+GROUP BY
+(Users.user_name)
+GO
+    EXEC displayStudentDegreeCount;
