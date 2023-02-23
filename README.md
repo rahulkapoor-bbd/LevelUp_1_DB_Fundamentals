@@ -1,6 +1,18 @@
 # LevelUp_1_DB_Fundamentals
 Code for DB fundamentals level up
 
+## Group Members
+- Zeerak Baig (zeerak@bbd.co.za)
+- Rahul Kapoor (rahulk@bbd.co.za)
+- Jesse Van Der Merwe (jesse@bbd.co.za)
+
+## Topic
+The topic for our group is **Exam Allocation**
+
+## Database Description
+The database contains tables related to Users, Exams, Degrees, Modules and Examinations. It allows for a simple model to store basic information about students, the segrees they are registerd for, the modules making up a degree and the exam(s) for modules. The exam venues and details of indivigilators are also able to be stored.
+
+
 ## Database Tables
 
 * __Venue__
