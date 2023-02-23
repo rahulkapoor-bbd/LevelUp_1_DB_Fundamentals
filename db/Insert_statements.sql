@@ -128,27 +128,27 @@ VALUES
 
 /*Degree course*/
 INSERT INTO
-    DegreeCourse (degree_code, degree_name, duration)
+    Degree_Course (degree_code, degree_name, duration)
 VALUES
     ('SACS08', 'Computer Science', 3);
 
 INSERT INTO
-    DegreeCourse (degree_code, degree_name, duration)
+    Degree_Course (degree_code, degree_name, duration)
 VALUES
     ('SAMS39', 'Mathematics', 3);
 
 INSERT INTO
-    DegreeCourse (degree_code, degree_name, duration)
+    Degree_Course (degree_code, degree_name, duration)
 VALUES
     ('SAEE24', 'Electrical Engineering', 4);
 
 INSERT INTO
-    DegreeCourse (degree_code, degree_name, duration)
+    Degree_Course (degree_code, degree_name, duration)
 VALUES
     ('SACE56', 'Computer Engineering', 4);
 
 INSERT INTO
-    DegreeCourse (degree_code, degree_name, duration)
+    Degree_Course (degree_code, degree_name, duration)
 VALUES
     ('SAIE56', 'Information Engineering', 4);
 
@@ -235,23 +235,23 @@ VALUES
 
 /*Invigilator Exam bridge*/
 INSERT INTO
-    Invigilator_Exam_Bridge (user_name, examination_Id)
+    Invigilator_Exam_Bridge (user_name, examination_id)
 VALUES
     ('dguile1', 'E001');
 
 INSERT INTO
-    Invigilator_Exam_Bridge (user_name, examination_Id)
+    Invigilator_Exam_Bridge (user_name, examination_id)
 VALUES
     ('dguile1', 'E001S');
 
 
 INSERT INTO
-    Invigilator_Exam_Bridge (user_name, examination_Id)
+    Invigilator_Exam_Bridge (user_name, examination_id)
 VALUES
     ('sshevels0', 'E002');
 
 INSERT INTO
-    Invigilator_Exam_Bridge (user_name, examination_Id)
+    Invigilator_Exam_Bridge (user_name, examination_id)
 VALUES
     ('sshevels0', 'E002S');
 

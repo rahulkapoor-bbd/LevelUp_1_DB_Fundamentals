@@ -18,7 +18,7 @@ GO
 	);
 
 GO
-	CREATE TABLE DegreeCourse(
+	CREATE TABLE Degree_Course(
 		degree_code varchar(10) NOT NULL PRIMARY KEY,
 		degree_name varchar(200) NOT NULL,
 		duration int NOT NULL,
@@ -27,12 +27,12 @@ GO
 GO
 	/*creating the degree student bridge*/
 	CREATE TABLE Degree_Student_Bridge(
-		degree_student_bridgeID int identity(1, 1) NOT NULL,
+		degree_student_bridge_id int identity(1, 1) NOT NULL,
 		user_name varchar(100) NOT NULL,
 		degree_code varchar(10) NOT NULL,
-		PRIMARY KEY(degree_student_bridgeID),
+		PRIMARY KEY(degree_student_bridge_id),
 		FOREIGN KEY(user_name) REFERENCES Users,
-		FOREIGN KEY(degree_code) REFERENCES DegreeCourse(degree_code),
+		FOREIGN KEY(degree_code) REFERENCES Degree_Course(degree_code),
 	);
 
 GO
@@ -63,11 +63,11 @@ ADD
 GO
 	/*creating the degree student bridge*/
 	CREATE TABLE Invigilator_Exam_Bridge(
-		Invigilator_exam_bridgeID int identity(1, 1) NOT NULL,
+		invidulator_exam_bridge_id int identity(1, 1) NOT NULL,
 		user_name varchar(100) NOT NULL,
-		examination_Id varchar(20) NOT NULL,
+		examination_id varchar(20) NOT NULL,
 		FOREIGN KEY(user_name) REFERENCES Users,
-		FOREIGN KEY(examination_Id) REFERENCES Examination(examination_Id),
+		FOREIGN KEY(examination_id) REFERENCES Examination(examination_id),
 	);
 
 CREATE TABLE dbo.Venue(
@@ -110,7 +110,7 @@ ADD
 
 GO
 	CREATE TABLE Module_Degree_Bridge(
-		module_degree_bridgeID int identity(1, 1) NOT NULL PRIMARY KEY,
+		module_degree_bridge_id int identity(1, 1) NOT NULL PRIMARY KEY,
 		degree_code varchar(10) NOT NULL,
 		module_code varchar(10) NOT NULL,
 	);
@@ -124,7 +124,7 @@ GO
 ALTER TABLE
 	Module_Degree_Bridge
 ADD
-	FOREIGN KEY(degree_code) REFERENCES DegreeCourse(degree_code)
+	FOREIGN KEY(degree_code) REFERENCES Degree_Course(degree_code)
 GO
 ALTER TABLE
 	Module
