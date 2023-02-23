@@ -57,7 +57,7 @@ __Examination__
   2. module_code: varchar(10) - The modeule code for the subject for which the exam is written. Serves as foreign key to Module table.
   3. examination_type: char(1) - The type of the exam being written. Can be either Normal ('N') or Supplementary ('S')
   
-  __Users__
+__Users__
 - Stores information about the users of the system.
 - The table contains the following attributes:
   1. user_name: varchar(100) - acts as a primary key that uniquely identifies a user.
@@ -73,7 +73,7 @@ __Examination__
   2. user_name: varchar(100): foreign key that references the User table.
   3. degree_code: varchar(100): foreign key that references the Degree table
     
-  __Invigilator_Exam_Bridge__
+__Invigilator_Exam_Bridge__
 - Bridging table to resolve many to many relationship between the invigilator and the Examination. Stores invigilator's user name along with the examination Id for       which the invigilator is assigned for.
 - The table contains the following attributes:
   1. invigilator_exam_bridge_id: int - primary key for the bridging table.
