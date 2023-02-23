@@ -56,3 +56,26 @@ __Examination__
   1. examination_id: varchar(20) - The identifier for each row in the table (each examination). Serves as Primary Key
   2. module_code: varchar(10) - The modeule code for the subject for which the exam is written. Serves as foreign key to Module table.
   3. examination_type: char(1) - The type of the exam being written. Can be either Normal ('N') or Supplementary ('S')
+  
+  __Users__
+  - Stores information about the users of the system.
+  - The table contains the following attributes:
+    1. user_name: varchar(100) - acts as a primary key that uniquely identifies a user.
+    2. user_type: char(1) - single character used to identify the type of user. Can either be 'S' for student or 'I' for invigilator.
+    3. user_firstname: varchar(100) - first name of the user.
+    4. user_surname: varchar(100) - surname of the user.
+    5. user_email: varchar(320) - email of a particular user.
+  
+  __Degree_Student_Bridge__
+  - Bridging table to resolve many to many relationship between the student and the degree course. Stores student's user name along with the degree code for which the     student is registered for.
+  - The table contains the following attributes:
+    1. degree_student_bridge_id: int - primary key for the bridging table.
+    2. user_name: varchar(100): foreign key that references the User table.
+    3. degree_code: varchar(100): foreign key that references the Degree table
+    
+      __Invigilator_Exam_Bridge__
+  - Bridging table to resolve many to many relationship between the invigilator and the Examination. Stores invigilator's user name along with the examination Id for       which the invigilator is assigned for.
+  - The table contains the following attributes:
+    1. invigilator_exam_bridge_id: int - primary key for the bridging table.
+    2. user_name: varchar(100): foreign key that references the User table.
+    3. examination_id: varchar(20): foreign key that references the Examination table
