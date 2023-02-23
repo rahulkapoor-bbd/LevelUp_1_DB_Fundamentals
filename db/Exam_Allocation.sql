@@ -61,14 +61,20 @@ ADD
 	FOREIGN KEY (module_code) REFERENCES Module(module_code);
 
 GO
-	/*creating the degree student bridge*/
-	CREATE TABLE Invigilator_Exam_Bridge(
-		invidulator_exam_bridge_id int identity(1, 1) NOT NULL,
-		user_name varchar(100) NOT NULL,
-		examination_id varchar(20) NOT NULL,
-		FOREIGN KEY(user_name) REFERENCES Users,
-		FOREIGN KEY(examination_id) REFERENCES Examination(examination_id),
-	);
+/*creating the degree student bridge*/
+CREATE TABLE Invigilator_Exam_Bridge(
+	invidulator_exam_bridge_id int identity(1, 1) NOT NULL,
+	user_name varchar(100) NOT NULL,
+	examination_id varchar(20) NOT NULL,
+	FOREIGN KEY(user_name) REFERENCES Users,
+	FOREIGN KEY(examination_id) REFERENCES Examination(examination_id),
+);
+
+ALTER TABLE
+Invigilator_Exam_Bridge
+ADD
+CONSTRAINT Pk_invidulator_exam_bridge_id PRIMARY KEY CLUSTERED (invidulator_exam_bridge_id ASC);
+GO
 
 CREATE TABLE dbo.Venue(
 	venue_id varchar(50) NOT NULL,
